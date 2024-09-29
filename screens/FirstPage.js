@@ -1,51 +1,41 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { tailwind } from 'tailwindcss-react-native';
 
 export default function FirstPage({ navigation }) {
     return (
-        <View style={styles.container}>
-            <Image source={require('../assets/icon.png')} style={styles.image} />
-            <Text style={styles.title}>Lost a document or found it?</Text>
-            <Text style={styles.subtitle}>Work with us to get your lost document.</Text>
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('LoginPage')}>
-                <Text style={styles.buttonText}>Get Started</Text>
+        <View style={tailwind('flex-1 bg-blue-500 justify-center items-center')}>
+
+            {/* Illustration Image */}
+            <View style={tailwind('mb-12')}>
+                <Image
+                    source={require('../assets/search.png')} // replace with your actual image path
+                    style={tailwind('h-48 w-48')}
+                    resizeMode="contain"
+                />
+            </View>
+
+            {/* Text Section */}
+            <View style={tailwind('mb-16 px-8')}>
+                <Text style={tailwind('text-white text-2xl font-bold text-center mb-4')}>
+                    Lost a document or found it
+                    work with us
+                </Text>
+                <Text style={tailwind('text-white text-base text-center')}>
+                    Find with AI is there for you to enable you
+                    to get your lost document
+                </Text>
+            </View>
+
+            {/* Button */}
+            <TouchableOpacity
+                style={tailwind('bg-white py-4 px-8 rounded-full')}
+                onPress={() => navigation.navigate('LoginPage')} // Change navigation as needed
+            >
+                <Text style={tailwind('text-blue-500 text-lg font-bold')}>
+                    Get started
+                </Text>
             </TouchableOpacity>
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#00AEEF',
-    },
-    image: {
-        width: 150,
-        height: 150,
-    },
-    title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        color: '#fff',
-        marginTop: 20,
-    },
-    subtitle: {
-        fontSize: 16,
-        color: '#fff',
-        textAlign: 'center',
-        marginVertical: 20,
-    },
-    button: {
-        backgroundColor: '#fff',
-        paddingVertical: 15,
-        paddingHorizontal: 50,
-        borderRadius: 30,
-    },
-    buttonText: {
-        color: '#00AEEF',
-        fontSize: 18,
-        fontWeight: 'bold',
-    },
-});

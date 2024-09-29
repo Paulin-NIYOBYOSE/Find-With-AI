@@ -4,7 +4,7 @@ import { View, Text, TextInput, StyleSheet, Image, TouchableOpacity } from 'reac
 export default function PhoneVerificationPage() {
     return (
         <View style={styles.container}>
-            <Image source={require('../assets/icon.png')} style={styles.image} />
+            <Image source={require('../assets/OTP.png')} style={styles.image} />
             <Text style={styles.title}>Phone Verification</Text>
             <TextInput
                 style={styles.input}

@@ -5,7 +5,6 @@ import { tailwind } from 'tailwindcss-react-native';
 export default function FirstPage({ navigation }) {
     return (
         <View style={tailwind('flex-1 bg-blue-500 justify-center items-center')}>
-
             {/* Illustration Image */}
             <View style={tailwind('mb-12')}>
                 <Image
